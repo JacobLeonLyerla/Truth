@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">My Truth</string>
+    <string name="top">Top</string>
+    <string name="bottom">Bottom</string>
+    <string name="add_to_board">Add to Board</string>
+    <string name="truth">Truth</string>
+    <string name="localized_description">Localized description</string>
+</resources>
