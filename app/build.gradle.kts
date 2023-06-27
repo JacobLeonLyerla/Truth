@@ -1,3 +1,5 @@
+@file:Suppress("UnstableApiUsage")
+
 plugins {
     id("com.android.application")
     id("com.google.dagger.hilt.android")
@@ -7,13 +9,18 @@ plugins {
 }
 
 android {
+    val compile = extra["android.compileSdk"] as String
+    val target = extra["android.targetSdk"] as String
+    val min = extra["android.minSdk"] as String
+    val composeCompiler = extra["compose.compiler"] as String
+
     namespace = "com.example.mytruth"
-    compileSdk = 33
+    compileSdk = compile.toInt()
 
     defaultConfig {
         applicationId = "com.example.mytruth"
-        minSdk = 31
-        targetSdk = 33
+        minSdk = min.toInt()
+        targetSdk = target.toInt()
         versionCode = 1
         versionName = "1.0"
 
@@ -22,32 +29,39 @@ android {
     }
 
     buildTypes {
-        getByName("release") {
+        release {
             isMinifyEnabled = false
             proguardFiles(
-                @Suppress("UnstableApiUsage")
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = JavaVersion.VERSION_17.toString()
+        freeCompilerArgs =
+            freeCompilerArgs + "-Xopt-in=kotlinx.coroutines.ExperimentalCoroutinesApi"
     }
-    @Suppress("UnstableApiUsage")
     buildFeatures.compose = true
-    composeOptions.kotlinCompilerExtensionVersion = "1.3.2"
+    composeOptions.kotlinCompilerExtensionVersion = composeCompiler
     packagingOptions.resources.excludes += "/META-INF/{AL2.0,LGPL2.1}"
 }
 
 
 dependencies {
+
+    implementation(projects.core.featureApi)
+    implementation(projects.feature.homeApi)
+    implementation(projects.feature.homeImpl)
+
     // AndroidX and Compose
     implementation(Deps.androidxCore)
+//    implementation(libs.androidx)
+
     implementation(Deps.lifecycleRuntime)
     implementation(Deps.activityCompose)
     implementation(platform(Deps.composeBom))
@@ -86,7 +100,6 @@ dependencies {
     testImplementation(Deps.junitJupiter)
     testImplementation(Deps.kotlinxCoroutinesTest)
 }
-
 
 tasks.withType<Test> {
     useJUnitPlatform()

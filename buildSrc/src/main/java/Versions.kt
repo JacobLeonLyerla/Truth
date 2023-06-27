@@ -15,3 +15,4 @@ object Versions {
     const val activityCompose = "1.7.2"
     const val hiltNavigationCompose = "1.0.0"
 }
+

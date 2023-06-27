@@ -1,0 +1,86 @@
+[versions]
+activity-compose = "1.7.2"
+coil = "2.3.0"
+composeBom = "2022.10.00"
+material3-compose = "1.1.1"
+coroutines-test = "1.7.0"
+core-ktx = "1.10.1"
+datastore = "1.0.0"
+hilt = "2.46.1"
+junit = "5.9.1"
+kotlin = "1.8.21"
+lifecycle = "2.6.1"
+mockk = "1.13.4"
+moshi = "1.12.0"
+retrofit = "2.9.0"
+room = "2.5.1"
+hilt-navigation-compose = "1.0.0"
+
+[plugins]
+hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+sotAndroidConvetions = { id = "sot.android-conventions" }
+
+[libraries]
+# Compose Libraries
+activity-compose = { module = "androidx.activity:activity-compose", version.ref = "activity-compose" }
+composeBom = { module = "androidx.compose:compose-bom", version.ref = "composeBom" }
+compose-ui = { module = "androidx.compose.ui:ui" }
+compose-ui-graphics = { module = "androidx.compose.ui:ui-graphics" }
+compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview" }
+compose-material3 = { module = "androidx.compose.material3:material3" }
+
+# Core Libraries
+androidx-core = { module = "androidx.core:core-ktx", version.ref = "core-ktx" }
+lifecycle-runtime = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycle" }
+
+# Networking Libraries
+retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
+retrofit-converter-moshi = { module = "com.squareup.retrofit2:converter-moshi", version.ref = "retrofit" }
+moshi-kotlin = { module = "com.squareup.moshi:moshi-kotlin", version.ref = "moshi" }
+
+# Dependency Injection Libraries
+hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
+hilt-compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hilt" }
+hilt-navigation-compose = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "hilt-navigation-compose" }
+
+# Image Loading Libraries
+coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coil" }
+
+# Data Persistence Libraries
+room-runtime = { module = "androidx.room:room-runtime", version.ref = "room" }
+room-ktx = { module = "androidx.room:room-ktx", version.ref = "room" }
+room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" }
+datastore-preferences = { module = "androidx.datastore:datastore-preferences", version.ref = "datastore" }
+
+# Serialization Libraries
+kotlin-serialization = { module = "org.jetbrains.kotlinx:kotlinx-serialization", version.ref = "kotlin" }
+kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlin" }
+
+# Testing Libraries
+mockk-android = { module = "io.mockk:mockk-android", version.ref = "mockk" }
+mockk-agent = { module = "io.mockk:mockk-agent", version.ref = "mockk" }
+junit-bom = { module = "org.junit:junit-bom", version.ref = "junit" }
+junit-jupiter = { module = "org.junit.jupiter:junit-jupiter", version.ref = "junit" }
+kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutines-test" }
+
+[bundles]
+test = [
+    "junit-bom",
+    "junit-jupiter",
+    "kotlinx-coroutines-test",
+    "mockk-android",
+    "mockk-agent",
+]
+network = [
+    "retrofit",
+    "retrofit-converter-moshi",
+    "kotlinx-serialization-json",
+]
+compose = [
+    "compose-ui",
+    "compose-ui-graphics",
+    "compose-material3",
+    "hilt-navigation-compose",
+]

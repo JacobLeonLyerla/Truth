@@ -1,4 +1,3 @@
-
 object Deps {
     // AndroidX and Compose
     val androidxCore = "androidx.core:core-ktx:${Versions.coreKtx}"
@@ -18,7 +17,8 @@ object Deps {
     // Dependency Injection (Hilt)
     val hiltAndroid = "com.google.dagger:hilt-android:${Versions.hilt}"
     val hiltCompiler = "com.google.dagger:hilt-compiler:${Versions.hilt}"
-    val hiltNavigationCompose = "androidx.hilt:hilt-navigation-compose:${Versions.hiltNavigationCompose}"
+    val hiltNavigationCompose =
+        "androidx.hilt:hilt-navigation-compose:${Versions.hiltNavigationCompose}"
 
     // Database (Room)
     val roomRuntime = "androidx.room:room-runtime:${Versions.room}"
@@ -29,7 +29,8 @@ object Deps {
     val coilCompose = "io.coil-kt:coil-compose:${Versions.coil}"
 
     // Serialization
-    val kotlinxSerializationJson = "org.jetbrains.kotlinx:kotlinx-serialization-json:${Versions.kotlinx}"
+    val kotlinxSerializationJson =
+        "org.jetbrains.kotlinx:kotlinx-serialization-json:${Versions.kotlinx}"
 
     // DataStore
     val datastorePreferences = "androidx.datastore:datastore-preferences:${Versions.datastore}"
