@@ -23,6 +23,8 @@ hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 sotAndroidConvetions = { id = "sot.android-conventions" }
+sotAndroidConvetionsCompose = { id = "sot.android-conventions-compose" }
+
 
 [libraries]
 # Compose Libraries

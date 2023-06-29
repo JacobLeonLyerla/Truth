@@ -1,10 +1,10 @@
-package com.example.home.impl.model.local.daos
+package com.example.mytruth.core.database.dao
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.example.home.impl.model.local.entity.Photo
+import com.example.mytruth.core.database.entity.Photo
 import kotlinx.coroutines.flow.Flow
 
 @Dao

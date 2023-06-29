@@ -1,3 +1,5 @@
+@file:Suppress("UnstableApiUsage")
+
 plugins {
     id(libs.plugins.sotAndroidConvetions.get().toString())
     alias(libs.plugins.hilt)
@@ -6,10 +8,16 @@ plugins {
 
 android {
     namespace = "com.example.mytruth.feature.home"
+    val composeCompiler = extra["compose.compiler"] as String
+
+
+    buildFeatures.compose = true
+    composeOptions.kotlinCompilerExtensionVersion = composeCompiler
 }
 
 dependencies {
     implementation(projects.feature.homeApi)
+    implementation(projects.core.database)
     implementation(libs.bundles.room)
     implementation(libs.datastore.preferences)
     implementation(libs.bundles.network)

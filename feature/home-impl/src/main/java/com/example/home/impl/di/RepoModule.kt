@@ -2,7 +2,7 @@ package com.example.home.impl.di
 
 import com.example.home.impl.annotations.AlbumDataStore
 import com.example.home.impl.annotations.DefaultScope
-import com.example.home.impl.model.local.daos.PhotosDao
+import com.example.mytruth.core.database.dao.PhotosDao
 import com.example.home.impl.model.local.pref.AlbumPref
 import com.example.home.impl.model.remote.repositories.PhotosRepo
 import com.example.home.impl.model.remote.repositories.PhotosRepoImpl
@@ -12,10 +12,16 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import kotlinx.coroutines.CoroutineScope
+import retrofit2.Retrofit
 
 @Module
 @InstallIn(SingletonComponent::class)
 object RepoModule {
+
+    @Provides
+    fun providePhotosService(retrofit: Retrofit): PhotosService {
+        return retrofit.create(PhotosService::class.java)
+    }
 
     @Provides
     fun provideRepository(

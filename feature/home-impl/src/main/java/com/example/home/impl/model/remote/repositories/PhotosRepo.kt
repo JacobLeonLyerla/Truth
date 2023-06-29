@@ -1,6 +1,6 @@
 package com.example.home.impl.model.remote.repositories
 
-import com.example.home.impl.model.local.entity.Photo
+import com.example.mytruth.core.database.entity.Photo
 import kotlinx.coroutines.flow.Flow
 
 interface PhotosRepo {

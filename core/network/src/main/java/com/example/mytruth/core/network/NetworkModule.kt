@@ -1,6 +1,5 @@
-package com.example.home.impl.di
+package com.example.mytruth.core.network
 
-import com.example.home.impl.model.remote.services.PhotosService
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dagger.Module
@@ -18,17 +17,16 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun provideService(): PhotosService {
-        val moshi = Moshi.Builder()
-            .add(KotlinJsonAdapterFactory())
-            .build()
+    fun provideMoshi(): Moshi = Moshi.Builder()
+        .add(KotlinJsonAdapterFactory())
+        .build()
 
-        return Retrofit
-            .Builder()
-            .baseUrl(BASE_URL)
-            .addConverterFactory(MoshiConverterFactory.create(moshi))
-            .build()
-            .create(PhotosService::class.java)
-    }
+    @Provides
+    @Singleton
+    fun provideRetrofit(moshi: Moshi): Retrofit = Retrofit.Builder()
+        .baseUrl(BASE_URL)
+        .addConverterFactory(MoshiConverterFactory.create(moshi))
+        .build()
+
 }
 

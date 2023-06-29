@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.mytruth.core.feature.ap"
+    namespace = "com.example.mytruth.core.feature.api"
 }
 
 dependencies {

@@ -63,6 +63,8 @@ dependencies {
     implementation(projects.core.featureApi)
     implementation(projects.feature.homeApi)
     implementation(projects.feature.homeImpl)
+    implementation(projects.core.network)
+
 
     implementation(libs.hilt.android)
     kapt(libs.hilt.compiler)

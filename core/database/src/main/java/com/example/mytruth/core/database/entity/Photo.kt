@@ -1,4 +1,4 @@
-package com.example.home.impl.model.local.entity
+package com.example.mytruth.core.database.entity
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

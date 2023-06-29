@@ -1,8 +1,8 @@
 package com.example.home.impl.vm
 
-import com.example.home.impl.model.local.entity.Photo
 import com.example.home.impl.model.remote.repositories.PhotosRepo
 import com.example.home.impl.model.testUtil.CoroutinesTestExtension
+import com.example.mytruth.core.database.entity.Photo
 
 import io.mockk.Runs
 import io.mockk.coEvery

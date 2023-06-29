@@ -1,9 +1,9 @@
-package com.example.home.impl.model.local
+package com.example.mytruth.core.database
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import com.example.home.impl.model.local.daos.PhotosDao
-import com.example.home.impl.model.local.entity.Photo
+import com.example.mytruth.core.database.dao.PhotosDao
+import com.example.mytruth.core.database.entity.Photo
 import javax.inject.Singleton
 
 @Singleton

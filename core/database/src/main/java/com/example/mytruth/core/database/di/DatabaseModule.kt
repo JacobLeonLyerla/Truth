@@ -1,9 +1,9 @@
-package com.example.home.impl.di
+package com.example.mytruth.core.database.di
 
 import android.content.Context
 import androidx.room.Room
-import com.example.home.impl.model.local.PhotosDatabase
-import com.example.home.impl.model.local.daos.PhotosDao
+import com.example.mytruth.core.database.PhotosDatabase
+import com.example.mytruth.core.database.dao.PhotosDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

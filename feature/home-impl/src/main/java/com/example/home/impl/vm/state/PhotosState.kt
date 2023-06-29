@@ -1,6 +1,7 @@
 package com.example.home.impl.vm.state
 
-import com.example.home.impl.model.local.entity.Photo
+import com.example.mytruth.core.database.entity.Photo
+
 
 data class PhotosState(
     val photosList: List<Photo> = emptyList(),

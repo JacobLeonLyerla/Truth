@@ -1,11 +1,11 @@
 package com.example.home.impl.model.remote.repositories
 
-import com.example.home.impl.model.local.daos.PhotosDao
-import com.example.home.impl.model.local.entity.Photo
+import com.example.mytruth.core.database.dao.PhotosDao
 import com.example.home.impl.model.local.pref.AlbumPref
 import com.example.home.impl.model.remote.response.PhotoDTO
 import com.example.home.impl.model.remote.services.PhotosService
 import com.example.home.impl.model.testUtil.CoroutinesTestExtension
+import com.example.mytruth.core.database.entity.Photo
 import io.mockk.Runs
 import io.mockk.coEvery
 import io.mockk.coVerify

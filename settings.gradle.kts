@@ -27,4 +27,11 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "MyTruth"
-include(":app", ":core:feature-api", ":feature:home-api", ":feature:home-impl")
+include(
+    ":app",
+    ":core:feature-api",
+    ":core:network",
+    ":core:database",
+    ":feature:home-api",
+    ":feature:home-impl"
+)

@@ -10,8 +10,6 @@ version = "1.0.0-ALPHA"
 android {
     val compile = extra["android.compileSdk"] as String
     val min = extra["android.minSdk"] as String
-    val composeCompiler = extra["compose.compiler"] as String
-
 
     compileSdk = compile.toInt()
 
@@ -43,8 +41,7 @@ android {
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_17.toString()
     }
-    buildFeatures.compose = true
-    composeOptions.kotlinCompilerExtensionVersion = composeCompiler
+
     packagingOptions.resources.excludes += "/META-INF/{AL2.0,LGPL2.1}"
 }
 

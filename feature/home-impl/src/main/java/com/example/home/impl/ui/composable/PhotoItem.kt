@@ -28,7 +28,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import coil.compose.rememberAsyncImagePainter
-import com.example.home.impl.model.local.entity.Photo
+import com.example.mytruth.core.database.entity.Photo
 import com.example.mytruth.feature.home.R
 import kotlinx.coroutines.launch
 
