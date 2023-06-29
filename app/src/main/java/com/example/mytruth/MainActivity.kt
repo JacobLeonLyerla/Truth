@@ -11,7 +11,6 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.rememberNavController
 import com.example.compose.MyTruthTheme
 import com.example.mytruth.navigation.sofNavGraph
-import com.example.mytruth.ui.composable.PhotoScreen
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

@@ -1,11 +1,11 @@
 package com.example.mytruth.di
 
-import com.example.mytruth.annotations.DefaultDispatcher
-import com.example.mytruth.annotations.DefaultScope
-import com.example.mytruth.annotations.IoDispatcher
-import com.example.mytruth.annotations.IoScope
-import com.example.mytruth.annotations.MainDispatcher
-import com.example.mytruth.annotations.MainScope
+import com.example.home.impl.annotations.DefaultDispatcher
+import com.example.home.impl.annotations.DefaultScope
+import com.example.home.impl.annotations.IoDispatcher
+import com.example.home.impl.annotations.IoScope
+import com.example.home.impl.annotations.MainDispatcher
+import com.example.home.impl.annotations.MainScope
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -18,26 +18,26 @@ import kotlinx.coroutines.SupervisorJob
 @InstallIn(SingletonComponent::class)
 object ScopeModule {
 
-    @DefaultScope
+    @com.example.home.impl.annotations.DefaultScope
     @Provides
     fun providesDefaultScope(
-        @DefaultDispatcher dispatcher: CoroutineDispatcher
+        @com.example.home.impl.annotations.DefaultDispatcher dispatcher: CoroutineDispatcher
     ): CoroutineScope {
         return CoroutineScope(SupervisorJob() + dispatcher)
     }
 
-    @IoScope
+    @com.example.home.impl.annotations.IoScope
     @Provides
     fun providesIoScope(
-        @IoDispatcher dispatcher: CoroutineDispatcher
+        @com.example.home.impl.annotations.IoDispatcher dispatcher: CoroutineDispatcher
     ): CoroutineScope {
         return CoroutineScope(SupervisorJob() + dispatcher)
     }
 
-    @MainScope
+    @com.example.home.impl.annotations.MainScope
     @Provides
     fun providesMainScope(
-        @MainDispatcher dispatcher: CoroutineDispatcher
+        @com.example.home.impl.annotations.MainDispatcher dispatcher: CoroutineDispatcher
     ): CoroutineScope {
         return CoroutineScope(SupervisorJob() + dispatcher)
     }

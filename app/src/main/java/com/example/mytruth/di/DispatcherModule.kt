@@ -1,8 +1,8 @@
 package com.example.mytruth.di
 
-import com.example.mytruth.annotations.DefaultDispatcher
-import com.example.mytruth.annotations.IoDispatcher
-import com.example.mytruth.annotations.MainDispatcher
+import com.example.home.impl.annotations.DefaultDispatcher
+import com.example.home.impl.annotations.IoDispatcher
+import com.example.home.impl.annotations.MainDispatcher
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -15,21 +15,21 @@ import kotlinx.coroutines.SupervisorJob
 @Module
 @InstallIn(SingletonComponent::class)
 object DispatcherModule {
-    @DefaultDispatcher
+    @com.example.home.impl.annotations.DefaultDispatcher
     @Provides
     fun providesDefaultDispatcher(): CoroutineDispatcher = Dispatchers.Default
 
-    @IoDispatcher
+    @com.example.home.impl.annotations.IoDispatcher
     @Provides
     fun providesIoDispatcher(): CoroutineDispatcher = Dispatchers.IO
 
-    @MainDispatcher
+    @com.example.home.impl.annotations.MainDispatcher
     @Provides
     fun providesMainDispatcher(): CoroutineDispatcher = Dispatchers.Main
 
     @Provides
     fun providesCoroutineScope(
-        @DefaultDispatcher dispatcher: CoroutineDispatcher
+        @com.example.home.impl.annotations.DefaultDispatcher dispatcher: CoroutineDispatcher
     ): CoroutineScope {
         return CoroutineScope(SupervisorJob() + dispatcher)
     }

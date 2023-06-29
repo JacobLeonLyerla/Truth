@@ -4,8 +4,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
+import com.example.home.impl.navigation.HomeFeatureImpl
 import com.example.home_api.HomeFeatureApi
-import com.example.home_impl.navigation.HomeFeatureImpl
 import com.example.mytruth.core.featureApi.register
 
 @Composable

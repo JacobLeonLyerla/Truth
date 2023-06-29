@@ -37,6 +37,12 @@ android {
             )
         }
     }
+    configurations {
+        create("cleanedAnnotations")
+
+        implementation.get().exclude(group = "org.jetbrains", module = "annotations")
+    }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
@@ -58,52 +64,57 @@ dependencies {
     implementation(projects.feature.homeApi)
     implementation(projects.feature.homeImpl)
 
-    // AndroidX and Compose
-    implementation(Deps.androidxCore)
-//    implementation(libs.androidx)
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.compiler)
+//    implementation(libs.bundles.network)
+//    implementation(libs.bundles.room)
+//    implementation(libs.datastore.preferences)
 
-    implementation(Deps.lifecycleRuntime)
-    implementation(Deps.activityCompose)
-    implementation(platform(Deps.composeBom))
-    implementation(Deps.composeUi)
-    implementation(Deps.composeUiGraphics)
-    implementation(Deps.composeUiToolingPreview)
-    implementation(Deps.composeMaterial3)
 
-    // Network (Retrofit, Moshi)
-    implementation(Deps.retrofit)
-    implementation(Deps.retrofitConverterMoshi)
-    implementation(Deps.moshiKotlin)
-
+//    // AndroidX and Compose
+//    implementation(Deps.androidxCore)
+////    implementation(libs.androidx)
+//
+//    implementation(Deps.lifecycleRuntime)
+//    implementation(Deps.activityCompose)
+//    implementation(platform(Deps.composeBom))
+//    implementation(Deps.composeUi)
+//    implementation(Deps.composeUiGraphics)
+//    implementation(Deps.composeUiToolingPreview)
+//    implementation(Deps.composeMaterial3)
+//
+//    // Network (Retrofit, Moshi)
+//    implementation(Deps.retrofit)
+//    implementation(Deps.retrofitConverterMoshi)
+//    implementation(Deps.moshiKotlin)
+//
     // Dependency Injection (Hilt)
-    implementation(Deps.hiltAndroid)
-    kapt(Deps.hiltCompiler)
-    implementation(Deps.hiltNavigationCompose)
 
-    // Database (Room)
-    implementation(Deps.roomRuntime)
-    implementation(Deps.roomKtx)
-    kapt(Deps.roomCompiler)
-
-    // Image loading (Coil)
-    implementation(Deps.coilCompose)
-
-    // Serialization
-    implementation(Deps.kotlinxSerializationJson)
-
-    // DataStore
-    implementation(Deps.datastorePreferences)
-
-    // Testing (MockK, JUnit, Coroutines Test)
-    testImplementation(Deps.mockk)
-    testImplementation(platform(Deps.junitBom))
-    testImplementation(Deps.junitJupiter)
-    testImplementation(Deps.kotlinxCoroutinesTest)
+//
+//    // Database (Room)
+//    implementation(Deps.roomRuntime)
+//    implementation(Deps.roomKtx)
+//    kapt(Deps.roomCompiler)
+//
+//    // Image loading (Coil)
+//    implementation(Deps.coilCompose)
+//
+//    // Serialization
+//    implementation(Deps.kotlinxSerializationJson)
+//
+//    // DataStore
+//    implementation(Deps.datastorePreferences)
+//
+//    // Testing (MockK, JUnit, Coroutines Test)
+//    testImplementation(Deps.mockk)
+//    testImplementation(platform(Deps.junitBom))
+//    testImplementation(Deps.junitJupiter)
+//    testImplementation(Deps.kotlinxCoroutinesTest)
 }
 
-tasks.withType<Test> {
-    useJUnitPlatform()
-    testLogging {
-        events("passed", "skipped", "failed")
-    }
-}
+//tasks.withType<Test> {
+//    useJUnitPlatform()
+//    testLogging {
+//        events("passed", "skipped", "failed")
+//    }
+//}

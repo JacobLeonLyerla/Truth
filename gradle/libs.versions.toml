@@ -9,9 +9,11 @@ datastore = "1.0.0"
 hilt = "2.46.1"
 junit = "5.9.1"
 kotlin = "1.8.21"
+kotlinx-serialization-json = "1.5.0"
 lifecycle = "2.6.1"
 mockk = "1.13.4"
 moshi = "1.12.0"
+navigation = "2.6.0"
 retrofit = "2.9.0"
 room = "2.5.1"
 hilt-navigation-compose = "1.0.0"
@@ -25,9 +27,10 @@ sotAndroidConvetions = { id = "sot.android-conventions" }
 [libraries]
 # Compose Libraries
 activity-compose = { module = "androidx.activity:activity-compose", version.ref = "activity-compose" }
-composeBom = { module = "androidx.compose:compose-bom", version.ref = "composeBom" }
+compose-bom = { module = "androidx.compose:compose-bom", version.ref = "composeBom" }
 compose-ui = { module = "androidx.compose.ui:ui" }
 compose-ui-graphics = { module = "androidx.compose.ui:ui-graphics" }
+compose-navigation = { module = "androidx.navigation:navigation-compose", version.ref = "navigation" }
 compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview" }
 compose-material3 = { module = "androidx.compose.material3:material3" }
 
@@ -56,7 +59,7 @@ datastore-preferences = { module = "androidx.datastore:datastore-preferences", v
 
 # Serialization Libraries
 kotlin-serialization = { module = "org.jetbrains.kotlinx:kotlinx-serialization", version.ref = "kotlin" }
-kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlin" }
+kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinx-serialization-json" }
 
 # Testing Libraries
 mockk-android = { module = "io.mockk:mockk-android", version.ref = "mockk" }
@@ -76,11 +79,18 @@ test = [
 network = [
     "retrofit",
     "retrofit-converter-moshi",
+    "moshi-kotlin",
     "kotlinx-serialization-json",
 ]
 compose = [
     "compose-ui",
     "compose-ui-graphics",
     "compose-material3",
+    "compose-navigation",
     "hilt-navigation-compose",
+    "coil-compose",
+]
+room = [
+    "room-runtime",
+    "room-ktx",
 ]

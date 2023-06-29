@@ -12,7 +12,7 @@ android {
     val min = extra["android.minSdk"] as String
     val composeCompiler = extra["compose.compiler"] as String
 
-    namespace = "com.example.mytruth"
+
     compileSdk = compile.toInt()
 
     defaultConfig {
@@ -20,6 +20,11 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
+    }
+    configurations {
+        create("cleanedAnnotations")
+
+        implementation.get().exclude(group = "org.jetbrains", module = "annotations")
     }
 
     buildTypes {
