@@ -32,6 +32,7 @@ include(
     ":core:feature-api",
     ":core:network",
     ":core:database",
+    ":core:preference",
     ":feature:home-api",
     ":feature:home-impl"
 )

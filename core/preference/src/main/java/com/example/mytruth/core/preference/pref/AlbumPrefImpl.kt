@@ -1,21 +1,19 @@
-package com.example.home.impl.model.local.pref
+package com.example.mytruth.core.preference.pref
 
-import androidx.datastore.core.DataStore
-import androidx.datastore.preferences.core.Preferences
-import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.longPreferencesKey
+import com.example.mytruth.core.preference.datastore.BasePref
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.flow
 
- class AlbumPrefImpl(private val dataStore: DataStore<Preferences>) : AlbumPref {
+class AlbumPrefImpl(private val dataStore: BasePref) : AlbumPref {
     private val timestampKey = longPreferencesKey(name = "timestamp")
 
     override val timestamp: Flow<Long>
-        get() = dataStore.data.map { pref -> pref[timestampKey] ?: 0L }
+        get() = flow { emit(dataStore.get(timestampKey, 0L)) }
 
     override suspend fun saveTimestamp(timestamp: Long) {
-        dataStore.edit { pref -> pref[timestampKey] = timestamp }
+        dataStore.save(timestampKey, timestamp)
     }
 
     override suspend fun isDataStale(currentTimestamp: Long): Boolean {

@@ -18,6 +18,7 @@ android {
 dependencies {
     implementation(projects.feature.homeApi)
     implementation(projects.core.database)
+    implementation(projects.core.preference)
     implementation(libs.bundles.room)
     implementation(libs.datastore.preferences)
     implementation(libs.bundles.network)

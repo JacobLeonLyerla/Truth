@@ -1,9 +1,9 @@
 package com.example.home.impl.di
 
-import com.example.home.impl.annotations.AlbumDataStore
+import com.example.mytruth.core.preference.annotation.AlbumDataStore
 import com.example.home.impl.annotations.DefaultScope
 import com.example.mytruth.core.database.dao.PhotosDao
-import com.example.home.impl.model.local.pref.AlbumPref
+import com.example.mytruth.core.preference.pref.AlbumPref
 import com.example.home.impl.model.remote.repositories.PhotosRepo
 import com.example.home.impl.model.remote.repositories.PhotosRepoImpl
 import com.example.home.impl.model.remote.services.PhotosService

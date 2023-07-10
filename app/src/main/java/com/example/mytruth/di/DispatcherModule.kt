@@ -1,8 +1,5 @@
 package com.example.mytruth.di
 
-import com.example.home.impl.annotations.DefaultDispatcher
-import com.example.home.impl.annotations.IoDispatcher
-import com.example.home.impl.annotations.MainDispatcher
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

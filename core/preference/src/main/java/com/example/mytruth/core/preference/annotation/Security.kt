@@ -1,11 +1,11 @@
-package com.example.home.impl.annotations
+package com.example.mytruth.core.preference.annotation
 
 import javax.inject.Qualifier
 
 @Retention(AnnotationRetention.BINARY)
 @Qualifier
-annotation class TimeDataStore
+annotation class DefaultPrefSecurity
 
 @Retention(AnnotationRetention.BINARY)
 @Qualifier
-annotation class AlbumDataStore
+annotation class SecurePrefSecurity

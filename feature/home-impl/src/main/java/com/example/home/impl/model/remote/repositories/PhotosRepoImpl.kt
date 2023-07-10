@@ -2,7 +2,7 @@ package com.example.home.impl.model.remote.repositories
 
 import com.example.mytruth.core.database.dao.PhotosDao
 import com.example.mytruth.core.database.entity.Photo
-import com.example.home.impl.model.local.pref.AlbumPref
+import com.example.mytruth.core.preference.pref.AlbumPref
 import com.example.home.impl.model.remote.services.PhotosService
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.Flow
